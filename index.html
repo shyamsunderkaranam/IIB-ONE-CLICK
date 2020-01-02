@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<title> ONE CLICK </title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script src="scripts/ngClipboard.js"></script>
+  </head>
+<body ng-app="myApp" ng-controller="userCtrl">
+
+<div class="w3-container">
+
+<h3>ALL IN ONE CLICK</h3>
+
+<table class="w3-table w3-bordered w3-striped">
+  
+  <tr>
+    <td>
+      Environment 
+    </td>
+	<td>
+		<select ng-model="environments" ng-options="envr.environments for envr in envs">
+		</select>
+	</td>
+  </tr>
+  <tr>
+	<td>
+      Link Type 
+    </td>
+	<td>
+		<select ng-model="linkType" ng-options="lnk.linkType for lnk in links">
+		</select>
+	</td>
+   </tr>
+</table>
+<br>
+<button class="w3-btn w3-green w3-ripple" ng-click="prepareLink(environments.id,linkType.id)">&#9998; GO</button>
+
+
+</div>
+<br />
+<div ng-hide="puttytext"> {{ finalLink }} 
+<br />
+Above text is copied to clipboard. Please goto run and paste it (ctrl+v) there and press Enter
+</div>
+
+<div align="center">
+  <h2> Some frequent links </h2>
+    <a href="https://jira.kfplc.com/" target="_blank">Jira link</a> <br /> <br />
+    <a href="https://kingfisher.service-now.com/navpage.do" target="_blank">Kingfisher Service-now</a> <br /> <br />
+    <a href="https://kingfisher.service-now.com/sp" target="_blank">Kingfisher Self Service</a> <br /> <br />
+    <a href="https://outlook.office.com/owa/" target="_blank">Outlook Webmail</a> <br /> <br />
+    <a href="https://teams.microsoft.com/_#/?lm=deeplink&lmsrc=officeWaffle" target="_blank">MS Teams</a> <br /> <br />
+    <a href="http://unxs0328.gha.kfplc.com/" target="_blank">Tivoli TWS link</a>  <br /> <br />
+    <a href="http://unxs0329.gha.kfplc.com/" target="_blank">Tivoli TWS link Backup server</a>  <br /> <br />
+</div>
+
+<script src= "atg-pso.js"></script>
+
+</body>
+</html>
